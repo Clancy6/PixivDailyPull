@@ -1,0 +1,43 @@
+name: "Pixiv Crawler"
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  
+  push:
+  
+env:
+  ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+
+jobs:
+  job_1:
+    name: Python Crawler
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: runner # 改成存放图片的分支
+    - name: Clear Previous
+      run: |
+        rm -f -- *.jpg
+        rm -f -- *.png
+    - name: Setup Python environment
+      uses: actions/setup-python@v1.1.1 
+    - name: Install Dependence
+      run: pip install requests
+    - name: Run pa.py
+      run: python pa.py
+    - name: list
+      run: ls
+    - name: Upload to this repo
+      run: |
+        git config --global user.name "Clancy6" # 改成Github账号用户名
+        git config --global user.email "Clancy1921@outlook.com" # 改成GitHub账号的邮箱
+        git add "*.jpg" "*.png" && echo "Git Added" # 参考: https://stackoverflow.com/questions/25083290/git-add-error-unknown-switch
+        git commit -m 'upload pa result' && echo "Git Committed"
+        git push -u origin runner && echo "Git Pushed Origin" # runner改成存放图片的分支
+    - name: Failure test
+      if: failure()
+      run: | 
+        ls
+        echo "Error on running!"
