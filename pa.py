@@ -42,7 +42,7 @@ def getSinglePic(url):
 
 def getAllPicUrl():
     count = 1
-    for n in range(1, 2):
+    for n in range(1, 5):
         url = 'https://www.pixiv.net/ranking.php?mode=daily&content=illust&p=%d&format=json' % n
         response = requests.get(url, headers=headers)
         illust_id = re.findall('"illust_id":(\d+?),', response.text)
