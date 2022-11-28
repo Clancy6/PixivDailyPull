@@ -1,8 +1,8 @@
 # Hi~
 
-## 2022-11-26 Updata
+## 2022-11-27 Updataed
 
-In order to keep workflows running, please send a push request by 1/26/2023.
+In order to keep workflows running, please send a push request by 1/27/2023.
 
 List of pictures (JSON) --> [https://api.github.com/repos/Clancy6/PixivDailyPull/contents/?ref=runner](https://api.github.com/repos/Clancy6/PixivDailyPull/contents/?ref=runner "Click Me")
 
