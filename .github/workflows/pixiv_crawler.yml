@@ -22,6 +22,7 @@ jobs:
       run: |
         rm -f -- *.jpg
         rm -f -- *.png
+        rm -f -- pid.data
     - name: Setup Python environment
       uses: actions/setup-python@v1.1.1 
     - name: Install Dependence
@@ -36,6 +37,7 @@ jobs:
         cat pid.data
         wget -O pid.data.old https://github.com/Clancy6/PixivDailyPull/raw/runner/pid.data
         cat pid.data.old >> pid.data
+        echo pid.data_has_been_updataed.
         git config --global user.name "Clancy6" # 改成Github账号用户名
         git config --global user.email "Clancy1921@outlook.com" # 改成GitHub账号的邮箱
         git add "*.jpg" "*.png" && echo "Git Added" # 参考: https://stackoverflow.com/questions/25083290/git-add-error-unknown-switch
