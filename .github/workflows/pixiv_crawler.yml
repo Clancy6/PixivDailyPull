@@ -17,10 +17,11 @@ jobs:
     - uses: actions/checkout@v2
       with:
         ref: runner # 改成存放图片的分支
-    - name: Clear Previous
-      run: |
-        rm -f -- *.jpg
-        rm -f -- *.png
+    #clear个锤子
+    #- name: Clear Previous
+    #  run: |
+    #    rm -f -- *.jpg
+    #    rm -f -- *.png
     - name: Setup Python environment
       uses: actions/setup-python@v1.1.1 
     - name: Install Dependence
