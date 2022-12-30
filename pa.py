@@ -36,7 +36,10 @@ def getSinglePic(url):
     # 提取图片原图地址
     picture = re.search('"original":"(.+?)"},"tags"', response.text)
     pic = requests.get(picture.group(1), headers=headers)
-    with open(path + '%s_%s-by-%s.%s' % (illust_id, name, user_name, picture.group(1)[-3:]), 'wb+') as f:#优化文件写入方法
+    img_name = path + '%s_%s-by-%s.%s' % (illust_id, name, user_name, picture.group(1)[-3:])# https://github.com/Clancy6/PixivDailyPull/issues/1
+    img_name = img_name.replace('?','？')
+    img_name = img_name.replace('#','%23')
+    with open(img_name, 'wb+') as f:#优化文件写入方法
         f.write(pic.content)
     with open('pid.data', 'a') as f:#保存图片id
         f.write(illust_id+'\n')
