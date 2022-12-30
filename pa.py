@@ -16,7 +16,7 @@ def getSinglePic(url):
     global repeat
     global repeat_user_name
     response = requests.get(url, headers=headers)
-    print("response":str(response))
+    print("response:\n",str(response))
     if re.search('"xRestrict":(.+?),"sl"', response.text).group() != '"xRestrict":0,"sl"':
         return False
     # 提取图片名称
