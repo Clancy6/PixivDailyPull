@@ -26,14 +26,16 @@ jobs:
     - name: Install Dependence
       run: pip install requests
     - name: Run pa.py
-      run: python pa.py
+      run: |
+        python pa.py
+        python imgDB-RunBot-Alpha.py
     - name: list
       run: ls
     - name: Upload to this repo
       run: |
         git config --global user.name "Clancy6" # 改成Github账号用户名
         git config --global user.email "Clancy1921@outlook.com" # 改成GitHub账号的邮箱
-        git add "*.jpg" "*.png" && echo "Git Added" # 参考: https://stackoverflow.com/questions/25083290/git-add-error-unknown-switch
+        git add "index.html" "*.jpg" "*.png" && echo "Git Added" # 参考: https://stackoverflow.com/questions/25083290/git-add-error-unknown-switch
         git commit -m 'upload pa result' && echo "Git Committed"
         git push -u origin runner && echo "Git Pushed Origin" # runner改成存放图片的分支
     - name: Failure test
