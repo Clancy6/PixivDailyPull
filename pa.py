@@ -17,7 +17,8 @@ def getSinglePic(url):
     global repeat_user_name
     response = requests.get(url, headers=headers)
     print("response:\n",str(response))
-    if re.search('"xRestrict":(.+?),"sl"', response.text).group() != '"xRestrict":0,"sl"':
+    #if re.search('"xRestrict":(.+?),"sl"', response.text).group() != '"xRestrict":0,"sl"':
+    if re.search('"xRestrict":(.+?),"sl"', response.text).group() != '"xRestrict":0,"sl"' or re.search('"original":(.+?),', response.text).group() == '"original":null},':#Thinks to:https://github.com/No5972/pixiv-github-action/issues/4#event-8129779417
         return False
     # 提取图片名称
     name = re.search('"illustTitle":"(.+?)"', response.text)
