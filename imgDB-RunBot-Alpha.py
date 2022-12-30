@@ -101,6 +101,6 @@ if __name__ == '__main__':
             print(i," : \n",HTML,"\n\n")
             i+=1
         #with open(str(path_i+1)+'.html', 'a', encoding= "utf-8") as f:
-	with open('index.html', 'a', encoding= "utf-8") as f:
+        with open('index.html', 'a', encoding= "utf-8") as f:
             f.write(HTML)
         print("Successfully.")
