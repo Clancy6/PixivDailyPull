@@ -3,7 +3,7 @@ import re
 import os
 
 headers = {
-    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36',
+    'user-agent': 'Mozilla/8.0 (Windows NT 10.0; Win64; x64; x128; iKun OS) AppleWebKit/884.8 (KHTML, like Gecko) Chrome/99.9.1145.14 Safari/666.66',
     'referer': 'https://www.pixiv.net/ranking.php?mode=daily&content=illust',
 }
 
@@ -16,6 +16,7 @@ def getSinglePic(url):
     global repeat
     global repeat_user_name
     response = requests.get(url, headers=headers)
+    print("response":str(response))
     if re.search('"xRestrict":(.+?),"sl"', response.text).group() != '"xRestrict":0,"sl"':
         return False
     # 提取图片名称
