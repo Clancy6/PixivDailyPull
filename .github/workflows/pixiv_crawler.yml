@@ -24,7 +24,10 @@ jobs:
     - name: Setup Python environment
       uses: actions/setup-python@v1.1.1 
     - name: Install Dependence
-      run: pip install requests
+      run: |
+        pip install requests
+        pip install pytest-shutil
+        pip install imagesize
     - name: Run pa.py
       run: |
         python pa.py
