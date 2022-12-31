@@ -82,7 +82,7 @@ if __name__ == '__main__':
     <body>
         <div class="main1">
 <!-- $imgPath -->
-        </br><center><a href="https://github.com/Clancy6/PixivDailyPull/archive/refs/heads/runner.zipv" target="_blank">Download all : https://github.com/Clancy6/PixivDailyPull/archive/refs/heads/runner.zip</a>
+        </br><center><a href="https://github.com/Clancy6/PixivDailyPull/archive/refs/heads/runner.zip" target="_blank">Download all : https://github.com/Clancy6/PixivDailyPull/archive/refs/heads/runner.zip</a>
 	</div>
     </body>
 </html>
