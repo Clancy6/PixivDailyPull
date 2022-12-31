@@ -28,7 +28,7 @@ jobs:
         pip install requests
         pip install pytest-shutil
         pip install imagesize
-    - name: Run pa.py
+    - name: Run pa.py&imgDB-RunBot-Alpha.py
       run: |
         python pa.py
         python imgDB-RunBot-Alpha.py
