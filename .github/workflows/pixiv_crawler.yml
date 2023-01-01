@@ -21,6 +21,7 @@ jobs:
       run: |
         rm -f -- *.jpg
         rm -f -- *.png
+        rm -f -- index.html
     - name: Setup Python environment
       uses: actions/setup-python@v1.1.1 
     - name: Install Dependence
