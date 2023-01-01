@@ -47,7 +47,7 @@ def getImg(path):#借鉴网上的
         # 返回指定路径的文件夹名称
         #dirs = os.listdir(path)
         # 循环遍历该目录下的照片
-        for dir in btw( "\"name\"\: \"", "\",", webget("https://api.github.com/repos/Clancy6/PixivDailyPull/contents/?ref=runner")
+        for dir in btw( "\"name\"\: \"", "\",", webget("https://api.github.com/repos/Clancy6/PixivDailyPull/contents/?ref=runner"))
         #for dir in dirs:
             # 拼接字符串
             pa = path+dir
