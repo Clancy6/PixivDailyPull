@@ -5,6 +5,7 @@ import imagesize
 import shutil
 import urllib.parse
 import requests
+import re
 
 
 """
@@ -35,13 +36,19 @@ def get_path_file(files_path):
             data.append(f_p)
     return data
 
+def btw(a,b,str_):
+    re1=str(a+r'(.*?)'+b)
+    reResult = re.findall(re1, str_)
+    return reResult
+
 def getImg(path):#借鉴网上的
     if(not "http" in path):
         Type = ['jpg','jieg','png','bmp','gif','webp','JPG','JPEG','PNG','BMP','GIF','WEBP','Gif']
         # 返回指定路径的文件夹名称
-        dirs = os.listdir(path)
+        #dirs = os.listdir(path)
         # 循环遍历该目录下的照片
-        for dir in dirs:
+	for dir in btw( "\"name\"\: \"", "\",", webget("https://api.github.com/repos/Clancy6/PixivDailyPull/contents/?ref=runner")
+        #for dir in dirs:
             # 拼接字符串
             pa = path+dir
             # 判断是否为照片
