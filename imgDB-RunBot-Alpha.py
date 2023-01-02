@@ -65,9 +65,9 @@ def getImg(path):#借鉴网上的
 if __name__ == '__main__':
     #ListFile = sys.argv[1]
     ListFile = "List.data"
-    for path_i in range(len(fread(ListFile))-1):
-        with open('index.html', 'w') as f:
-            f.write("")
+    #for path_i in range(len(fread(ListFile))-1):
+    with open('index.html', 'w') as f:
+        f.write("")
     HTML = """
 <!DOCTYPE html>
 <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
@@ -109,6 +109,10 @@ if __name__ == '__main__':
             print(i," : \n",HTML,"\n\n")
             i+=1
         #with open(str(path_i+1)+'.html', 'a', encoding= "utf-8") as f:
+	with open('index.html', 'w') as f:
+            f.write("")
+	with open('index.html', 'w') as f:
+            f.write("")
         with open('index.html', 'a', encoding= "utf-8") as f:
             f.write(HTML)
         print("Successfully.")
